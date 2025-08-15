@@ -1,0 +1,147 @@
+/* body {
+  font-family: Arial, sans-serif;
+  background-color: #8a8a8a;
+}
+
+.container {
+  width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgb(233, 231, 231);
+  border: 1px solid #999;
+}
+
+ul {
+  margin-block: 80px;
+  padding: 0;
+  list-style-type: none;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+li {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  
+}
+
+li.done {
+  background-color: #d4edda;
+  text-decoration: line-through;
+}
+
+li span {
+  float: left;
+  width: 60%;
+}
+
+li .buttons {
+  float: right;
+}
+
+button {
+  padding: 5px 10px;
+  margin-left: 4px;
+  border: 1px solid #444;
+  cursor: pointer;
+  font-size: 12px;
+  border: 0px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.add{
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    margin-left: 80px;
+    font-weight: 600;
+background-color: rgb(76, 76, 196);
+color: white;
+}
+
+
+.done-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.form {
+  margin-top: 10px;
+}
+
+#taskInput {
+  width: 300px;
+  padding: 10px;
+  margin-left:100px ;
+  border: 1px solid rgb(193, 193, 193);
+  border-radius: 8px;
+  font-weight: 600;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+body{
+    background-color: rgb(71, 223, 162);
+}
+.form{
+    height: 300px;
+    width: 300px;
+    background-color: antiquewhite;
+    position: absolute;
+    top: 27%;
+    left: 38%;
+}
+
+.fields{
+    text-align: center;
+    position: relative;
+    top: 15%;
+}
+#pass,#user {
+    width: 70%;
+    padding: 13px;
+    margin-block: 7px;
+    font-weight: 600;
+    border: 0px;
+}
+
+.btn{
+    width: 79%;
+    margin-block:8px ;
+    padding: 13px;
+    color: white;
+    background-color: rgb(4, 172, 4);
+    border: 0px;
+    font-weight: 600;
+}
+.register{
+    margin-block: 4px;
+    position: relative;
+    margin: auto;
+    width: 80%;
+}
+p{
+    display: inline;
+}
+a{
+    color: green;
+} 
+.message{
+  margin-top: 5PX;
+}
