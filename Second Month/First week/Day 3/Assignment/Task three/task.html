@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Grid 3D</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #3dbff2; 
+      perspective: 1200px; 
+    }
+
+    .grid-wrapper {
+      transition: transform 1s;
+      transform-style: preserve-3d;
+    }
+
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 160px);
+      grid-template-rows: repeat(3, 160px);
+      grid-template-areas: 
+        "c a a"
+        "c d b"
+        "e e b";
+      gap: 10px;
+      transform: rotate(45deg); 
+    }
+
+    .grid div {
+      background: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+    }
+
+    .grid-wrapper:hover {
+      transform: rotateY(360deg) rotateZ(360deg) rotateX(360deg) scale(1.05);
+    }
+
+    .a { grid-area: a; }
+    .b { grid-area: b; }
+    .c { grid-area: c; }
+    .d { grid-area: d; }
+    .e { grid-area: e; }
+    .f { grid-area: f; }
+
+  </style>
+</head>
+<body>
+  <div class="grid-wrapper">
+    <div class="grid">
+      <div class="a">1</div>
+      <div class="b">2</div>
+      <div class="c">3</div>
+      <div class="d">4</div>
+      <div class="e">5</div>
+    </div>
+  </div>
+</body>
+</html>

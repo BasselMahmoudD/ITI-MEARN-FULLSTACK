@@ -1,0 +1,28 @@
+* {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+      aspect-ratio: 4 / 3;
+      margin: auto;
+      border: 5px solid black;
+    }
+
+    .box {
+      width: 100px;               /* fixed width */
+      aspect-ratio: 4 / 3;        /* maintain 4:3 ratio */
+      border: 3px solid orange;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
