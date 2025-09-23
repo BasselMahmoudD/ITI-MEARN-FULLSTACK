@@ -1,4 +1,4 @@
-export const userSchema = {
+export const authValidation = {
     type: "object",
     properties: {
         name: { type: "string" },
@@ -7,6 +7,7 @@ export const userSchema = {
             type: "string",
             enum: ["student", "admin"]
         },
+        password: { type: "string" },
         department: {
             type: "string",
             pattern: "^[a-fA-F0-9]{24}$"
@@ -16,6 +17,6 @@ export const userSchema = {
             items: { type: "string", pattern: "^[a-fA-F0-9]{24}$" }
         }
     },
-    required: ["name", "email"],
+    required: ["name", "email", "password"],
     additionalProperties: false,
 };

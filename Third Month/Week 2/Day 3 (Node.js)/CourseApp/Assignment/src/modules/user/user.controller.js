@@ -20,25 +20,6 @@ export const getSpecificUser = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
-export const addUser = async (req, res) => {
-  const data = req.body;
-  try {
-    const allUsers = await User.find();
-    const existEmail = allUsers.find((user) => {
-      user.email == data.email;
-    });
-    if (existEmail) {
-      return res.status(208).json({ message: "Email already exist" });
-    }
-    const users = new User({ ...data });
-    await users.save();
-    res.status(201).json({ message: "User Created Successfully", user: users });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
-
 export const deleteUser = async (req, res) => {
   try {
     let { id } = req.params;
