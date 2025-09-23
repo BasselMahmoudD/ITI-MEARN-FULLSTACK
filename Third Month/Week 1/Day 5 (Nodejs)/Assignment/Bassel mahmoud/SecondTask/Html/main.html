@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../Css/main.css">
+  <title>main</title>
+</head>
+
+<body>
+  <form action="welcome.html" method="post">
+    <input type="text" name="name" placeholder="Name" required minlength="3" />
+    <input type="text" name="mobile" placeholder="Mobile Number" pattern="^[0-9]{10,15}$" required />
+    <input type="text" name="addr" placeholder="Address" required />
+    <input type="email" name="email" placeholder="Email" minlength="5" required />
+    <button type="submit"> Submit </button>
+  </form>
+</body>
+
+</html>

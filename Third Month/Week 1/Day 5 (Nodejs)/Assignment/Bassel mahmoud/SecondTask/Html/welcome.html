@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment Two</title>
+  <link rel="stylesheet" href="../Css/main.css" />
+</head>
+
+<body>
+  <div class="welcomeBody">
+    <p>Welcome <b>{clientName}</b> your entered data as follows:</p>
+    <ul>
+      <li>MobileNumber : { MobileNumber }</li>
+      <li>Email : { Email }</li>
+      <li>Address : { Address }</li>
+    </ul>
+    <button id="show">Show More</button>
+    <div id="user_list"></div>
+  </div>
+  <script>
+    const btn = document.getElementById("show");
+    btn.addEventListener("click", async () => {
+      const res = await fetch("/params_data.json");
+      const data = await res.json();
+      console.log(data);
+      let list = "<ul>";
+      data.forEach((user) => {
+        list += `<ul><li>Name: ${user.name}</li>
+                <li> Mobile: ${user.mobile}</li>
+                <li> Email: ${user.email}</li>
+                <li>Address: ${user.addr}</li>
+               </ul>`;
+      });
+      list += "</ul>";
+      document.getElementById("user_list").innerHTML = list;
+    });
+  </script>
+  <script src="../Java/App.js"></script>
+</body>
+
+</html>
