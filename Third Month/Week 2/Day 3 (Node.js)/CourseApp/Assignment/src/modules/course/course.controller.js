@@ -55,7 +55,7 @@ export const deleteCourse = async (req, res) => {
 export const updateCourse = async (req, res) => {
   try {
     let { id } = req.params;
-    const course = await Course.findByIdAndUpdate(id, req.body,{
+    const course = await Course.findByIdAndUpdate(id, req.body, {
       new: true,
       runValidators: true,
     }).populate("department");

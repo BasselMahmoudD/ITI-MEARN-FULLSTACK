@@ -9,9 +9,9 @@ import { auth } from "../../middleware/auth.middleware.js";
 import { checkRole } from "../../middleware/checkRole.middleware.js";
 
 const userRouter = express.Router();
-userRouter.get("/", getAllUser);
-userRouter.get("/:id", getSpecificUser);
+userRouter.get("/", auth(), checkRole(), getAllUser);
+userRouter.get("/:id", auth(), checkRole(), getSpecificUser);
 userRouter.delete("/:id", auth(), checkRole(), deleteUser);
-userRouter.put("/:id", updateUser);
+userRouter.put("/:id", auth(), updateUser);
 
 export default userRouter;
