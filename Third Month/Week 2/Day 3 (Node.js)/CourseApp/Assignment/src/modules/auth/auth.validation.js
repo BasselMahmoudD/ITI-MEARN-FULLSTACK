@@ -1,4 +1,4 @@
-export const authValidation = {
+export const signUpValidation = {
     type: "object",
     properties: {
         name: { type: "string" },
@@ -18,5 +18,14 @@ export const authValidation = {
         }
     },
     required: ["name", "email", "password"],
+    additionalProperties: false,
+};
+export const loginValidation = {
+    type: "object",
+    properties: {
+        email: { type: "string", format: "email" },
+        password: { type: "string" },
+    },
+    required: ["email", "password"],
     additionalProperties: false,
 };

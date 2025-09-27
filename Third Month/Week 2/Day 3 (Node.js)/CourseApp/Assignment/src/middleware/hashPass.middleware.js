@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 export const hashPassword = () => {
     return async (req, res, next) => {
         const { password } = req.body
+        if (!password) next()
         const hashedPass = await bcrypt.hash(password, 10);
         req.body.password = hashedPass;
         next()

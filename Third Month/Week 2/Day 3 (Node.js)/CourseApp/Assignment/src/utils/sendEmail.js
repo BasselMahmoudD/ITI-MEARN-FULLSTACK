@@ -24,4 +24,3 @@ export const SendEmail = async ({
     });
     return info
 }
-

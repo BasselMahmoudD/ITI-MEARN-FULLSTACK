@@ -7,13 +7,14 @@ import {
   updateCourse,
 } from "./course.controller.js";
 import { validate } from "../../middleware/validations.middleware.js";
-import { courseSchema } from "./course.validation.js";
+import { checkRole } from "../../middleware/checkRole.middleware.js";
+import { auth } from "../../middleware/auth.middleware.js";
 
 const courseRouter = express.Router();
-courseRouter.get("/", getAllCourse);
-courseRouter.get("/:id", getSpecificCourse);
-courseRouter.post("/", validate("course"), addCourse);
-courseRouter.delete("/:id", deleteCourse);
-courseRouter.put("/:id", validate("course"), updateCourse);
+courseRouter.get("/", auth(), checkRole(), getAllCourse);
+courseRouter.get("/:id", auth(), checkRole(), getSpecificCourse);
+courseRouter.post("/", auth(), checkRole(), validate("course"), addCourse);
+courseRouter.delete("/:id", auth(), checkRole(), deleteCourse);
+courseRouter.put("/:id", auth(), checkRole(), validate("updateCourse"), updateCourse);
 
 export default courseRouter;

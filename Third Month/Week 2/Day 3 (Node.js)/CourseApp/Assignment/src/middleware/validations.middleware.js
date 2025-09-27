@@ -1,9 +1,9 @@
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
-import { userSchema } from '../modules/user/user.validation.js';
-import { courseSchema } from '../modules/course/course.validation.js';
-import { departmentSchema } from '../modules/department/department.validation.js';
-import { authValidation } from "../modules/auth/auth.validation.js";
+import { createUserSchema, updateUserSchema } from '../modules/user/user.validation.js';
+import { createCourseSchema, updateCourseSchema } from '../modules/course/course.validation.js';
+import { createDepartmentSchema, updateDepartmentSchema } from '../modules/department/department.validation.js';
+import { loginValidation, signUpValidation } from "../modules/auth/auth.validation.js";
 
 
 const ajv = new Ajv({ allErrors: true, removeAdditional: true });
@@ -11,10 +11,14 @@ addFormats(ajv);
 
 
 const validators = {
-  user: ajv.compile(userSchema),
-  course: ajv.compile(courseSchema),
-  department: ajv.compile(departmentSchema),
-  auth: ajv.compile(authValidation),
+  user: ajv.compile(createUserSchema),
+  updateUser: ajv.compile(updateUserSchema),
+  course: ajv.compile(createCourseSchema),
+  updateCourse: ajv.compile(updateCourseSchema),
+  department: ajv.compile(createDepartmentSchema),
+  updateDepartment: ajv.compile(updateDepartmentSchema),
+  signup: ajv.compile(signUpValidation),
+  login: ajv.compile(loginValidation),
 };
 
 export const validate =

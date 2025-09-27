@@ -7,6 +7,6 @@ import { checkVerification } from '../../middleware/checkVerification.js';
 
 export const authRouter = express.Router()
 
-authRouter.post("/signup", validate("auth"), hashPassword(), checkEmail(), signup);
 authRouter.get("/verify/:token", verificationEmail);
-authRouter.post("/login", loginEmail(), comparePassword(), checkVerification(), validate("user"), signin);
+authRouter.post("/signup", validate("signup"), hashPassword(), checkEmail(), validate("user"), signup);
+authRouter.post("/login", loginEmail(), comparePassword(), checkVerification(), validate("login"), signin);
